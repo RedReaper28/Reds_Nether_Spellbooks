@@ -27,7 +27,44 @@ sourceSets.main.resources {
 }
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+    maven {
+        name = "Iron's Maven - Release"
+        url = "https://code.redspace.io/releases"
+    }
+    maven {
+        name = "Iron's Maven - Snapshots"
+        url = "https://code.redspace.io/snapshots"
+    }
+
+    maven {
+        name = "aces_spell_utilsReleases"
+        url = "http://localhost:8080/releases"
+        allowInsecureProtocol = true
+    }
+
+    maven {
+        name = "aces_spell_utilsSnapshots"
+        url = "http://localhost:8080/snapshots"
+        allowInsecureProtocol = true
+    }
+
+    maven { url = "https://maven.enginehub.org/repo/" }
+    maven {
+        url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
+        content {
+            includeGroup("software.bernie.geckolib")
+        }
+    }
+
+    maven {
+        name = "AzureDoom Mods"
+        url = "https://maven.azuredoom.com/mods"
+    }
+
+    maven { url = "https://maven.theillusivec4.top" }
+    maven { url = "https://cursemaven.com" }
+    maven { url = "https://maven.blamejared.com" }
+    maven { url = "https://maven.kosmx.dev/" }
 }
 
 base {
@@ -116,27 +153,45 @@ configurations {
 }
 
 dependencies {
-    // Example optional mod dependency with JEI
-    // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
-    // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
-    // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
-    // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
+    implementation name: "ElysiumAPI-1.21.1-$elysium_version" //jitpack is being a bitch and not allowing implementation
+    implementation "team.lodestar.lodestone:lodestone:$lodestone_version"
 
-    // Example mod dependency using a mod jar from ./libs with a flat dir repository
-    // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
-    // The group id is ignored when searching -- in this case, it is "blank"
-    // implementation "blank:coolmod-${mc_version}:${coolmod_version}"
+    implementation "curse.maven:jadens-nether-expansion-1111833:8707156"
 
-    // Example mod dependency using a file as dependency
-    // implementation files("libs/coolmod-${mc_version}-${coolmod_version}.jar")
+    // ISS ***************************************************************************************************
+    implementation "io.redspace:irons_spellbooks:1.21.1-3.16.3"
 
-    // Example project dependency using a sister or child project:
-    // implementation project(":myproject")
+    // PATREON LIB
+    implementation "io.redspace:irons_lib:${irons_lib_version}"
 
-    // For more info:
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    // GECKOLIB ***************************************************************************************************
+    implementation "curse.maven:geckolib-388172:6304958"
+
+    // AZURELIB
+    implementation "curse.maven:azurelib-817423:7371539"
+
+    // CURIOS *****************************************************************************************************
+    implementation "curse.maven:curios-309927:6274154"
+
+    // CAELUS *****************************************************************************************************
+    compileOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}:api"
+    localRuntime "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
+
+    // PLAYER ANIMATOR ********************************************************************************************
+    implementation "curse.maven:playeranimator-658587:6024462"
+
+    // JEI ********************************************************************************************************
+    implementation "curse.maven:jei-238222:9009406"
+
+    // JADE ********************************************************************************************************
+    implementation "curse.maven:jade-324717:8591319"
+
+    // Ace's Spell Utils (REQUIRED - It's literally my API mod)
+    implementation "curse.maven:aces-spell-utils-1299492:8789930"
+
+    localRuntime "curse.maven:irons-jewelry-1101111:8365016"
+    localRuntime "io.redspace:atlas_api:${atlas_api_version}"
+
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
