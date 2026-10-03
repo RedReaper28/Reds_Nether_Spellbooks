@@ -153,9 +153,8 @@ configurations {
 }
 
 dependencies {
-    implementation name: "ElysiumAPI-1.21.1-$elysium_version" //jitpack is being a bitch and not allowing implementation
-    implementation "team.lodestar.lodestone:lodestone:$lodestone_version"
-
+    implementation "curse.maven:elysium-api-1158628:8707151"
+    implementation "curse.maven:lodestone-616457:7264731"
     implementation "curse.maven:jadens-nether-expansion-1111833:8707156"
 
     // ISS ***************************************************************************************************
@@ -173,18 +172,14 @@ dependencies {
     // CURIOS *****************************************************************************************************
     implementation "curse.maven:curios-309927:6274154"
 
-    // CAELUS *****************************************************************************************************
-    compileOnly "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}:api"
-    localRuntime "com.illusivesoulworks.caelus:caelus-neoforge:${caelus_version}"
-
     // PLAYER ANIMATOR ********************************************************************************************
     implementation "curse.maven:playeranimator-658587:6024462"
 
     // JEI ********************************************************************************************************
-    implementation "curse.maven:jei-238222:9009406"
+    implementation "curse.maven:jei-238222:6756166"
 
     // JADE ********************************************************************************************************
-    implementation "curse.maven:jade-324717:8591319"
+    implementation "curse.maven:jade-324717:6853386"
 
     // Ace's Spell Utils (REQUIRED - It's literally my API mod)
     implementation "curse.maven:aces-spell-utils-1299492:8789930"

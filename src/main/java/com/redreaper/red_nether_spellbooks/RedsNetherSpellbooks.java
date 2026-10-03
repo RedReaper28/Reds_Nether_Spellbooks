@@ -1,5 +1,11 @@
 package com.redreaper.red_nether_spellbooks;
 
+import com.redreaper.red_nether_spellbooks.init.ModCreativeTabs;
+import com.redreaper.red_nether_spellbooks.init.ModEntities;
+import com.redreaper.red_nether_spellbooks.init.ModItems;
+import com.redreaper.red_nether_spellbooks.init.ModSpells;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -32,14 +38,17 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 @Mod(RedsNetherSpellbooks.MOD_ID)
 public class RedsNetherSpellbooks {
-    public static final String MOD_ID = "reds_nether_spellbooks ";
+    public static final String MOD_ID = "reds_nether_spellbooks";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public RedsNetherSpellbooks(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 
-
+        ModCreativeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModEntities.register(modEventBus);
+        ModSpells.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -57,5 +66,10 @@ public class RedsNetherSpellbooks {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
+    }
+
+    public static ResourceLocation id(@NotNull String path)
+    {
+        return ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, path);
     }
 }
