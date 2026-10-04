@@ -1,9 +1,6 @@
 package com.redreaper.red_nether_spellbooks;
 
-import com.redreaper.red_nether_spellbooks.init.ModCreativeTabs;
-import com.redreaper.red_nether_spellbooks.init.ModEntities;
-import com.redreaper.red_nether_spellbooks.init.ModItems;
-import com.redreaper.red_nether_spellbooks.init.ModSpells;
+import com.redreaper.red_nether_spellbooks.init.*;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -48,6 +45,7 @@ public class RedsNetherSpellbooks {
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModLootModifiers.register(modEventBus);
         ModSpells.register(modEventBus);
 
         modEventBus.addListener(this::addCreative);

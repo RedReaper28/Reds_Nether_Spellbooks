@@ -14,11 +14,12 @@ public class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB=
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, RedsNetherSpellbooks.MOD_ID);
 
-    public static final Supplier<CreativeModeTab> MONSTERS_AND_GEAR_TAB=CREATIVE_MODE_TAB.register("reds_nether_spellbooks",
-            ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.FIREBOLT_SHELL.get()))
+    public static final Supplier<CreativeModeTab> REDS_NETHER_SPELLBOOKS =CREATIVE_MODE_TAB.register("reds_nether_spellbooks",
+            ()-> CreativeModeTab.builder().icon(()->new ItemStack(ModItems.BANSHEE_SPELL_BOOK.get()))
                     .title(Component.translatable("creative_tab.reds_nether_spellbooks.reds_nether_spellbooks"))
                     .displayItems((itemDisplayParameters, output) ->{
                         output.accept(ModItems.FIREBOLT_SHELL.get());
+                        output.accept(ModItems.BANSHEE_SPELL_BOOK.get());
 
                     }).build());
 

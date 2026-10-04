@@ -1,0 +1,15 @@
+package com.redreaper.red_nether_spellbooks.item.curios.spellbooks;
+
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.item.SpellBook;
+import io.redspace.ironsspellbooks.item.weapons.AttributeContainer;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.Rarity;
+
+public class BansheeSpellBookIte extends SpellBook {
+    public BansheeSpellBookIte() {
+        super(10, new Properties().fireResistant().stacksTo(1).rarity(Rarity.UNCOMMON));
+        withSpellbookAttributes(new AttributeContainer(AttributeRegistry.BLOOD_SPELL_POWER, 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+                new AttributeContainer(AttributeRegistry.MAX_MANA, 200, AttributeModifier.Operation.ADD_VALUE));
+    }
+}

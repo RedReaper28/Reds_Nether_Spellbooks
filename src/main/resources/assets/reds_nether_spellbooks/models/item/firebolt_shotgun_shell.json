@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "reds_nether_spellbooks:item/firebolt_shotgun_shell"
+  }
+}

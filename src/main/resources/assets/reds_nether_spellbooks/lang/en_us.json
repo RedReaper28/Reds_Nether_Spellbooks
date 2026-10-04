@@ -1,9 +1,19 @@
 {
-  "item.reds_nether_spellbooks.firebolt_shotgun_shell": "Firebolt Shotgun Shell",
+  "item.reds_nether_spellbooks.banshee_spell_book": "Banshee Summon Instructions",
+  "item.reds_nether_spellbooks.firebolt_shotgun_shell": "Dragon Breath Shotgun Shell",
 
+  "entity.reds_nether_spellbooks.summoned_blaze": "Summoned Blaze",
+  "entity.reds_nether_spellbooks.summoned_banshee": "Summoned Banshee",
+  "entity.reds_nether_spellbooks.summoned_vessel": "Summoned Vessel",
 
-  "spell.reds_nether_spellbooks.summon_blaze": "Summon Blazes",
+  "spell.reds_nether_spellbooks.summon_blaze": "Summon Blaze Guard",
   "spell.reds_nether_spellbooks.summon_blaze.guide": "Cast to conjure Blazes that will follow,protect and fight for you",
+
+  "spell.reds_nether_spellbooks.summon_banshee": "Summon Banshee Haunting",
+  "spell.reds_nether_spellbooks.summon_banshee.guide": "Cast to conjure Banshees that will follow,protect and fight for you",
+
+  "spell.reds_nether_spellbooks.summon_vessel": "Summon Vessel Duo",
+  "spell.reds_nether_spellbooks.summon_vessel.guide": "Cast to conjure Vessels that will follow,protect and fight for you",
 
   "creative_tab.reds_nether_spellbooks.reds_nether_spellbooks": "Red's Nether Spells 'n Spellbooks"
 }

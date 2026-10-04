@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "textures": {
+      "book": "reds_nether_spellbooks:item/spell_book_models/banshee_spell_book",
+      "particle": "reds_nether_spellbooks:item/spell_book_models/banshee_spell_book"
+    },
+    "parent": "irons_spellbooks:item/template_spell_book_model"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "reds_nether_spellbooks:item/banshee_spell_book"
+      }
+    },
+    "head": {
+      "textures": {
+        "book": "reds_nether_spellbooks:item/spell_book_models/banshee_spell_book",
+        "particle": "reds_nether_spellbooks:item/spell_book_models/banshee_spell_book"
+      },
+      "parent": "irons_spellbooks:item/template_spell_book_model_open"
+    }
+  }
+}

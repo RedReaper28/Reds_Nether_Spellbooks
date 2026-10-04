@@ -2,6 +2,9 @@ package com.redreaper.red_nether_spellbooks.init;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
 import com.redreaper.red_nether_spellbooks.spells.fire.SummonBlazesSpell;
+import com.redreaper.red_nether_spellbooks.spells.necro.BansheeShotSpell;
+import com.redreaper.red_nether_spellbooks.spells.necro.SummonBansheeSpell;
+import com.redreaper.red_nether_spellbooks.spells.necro.SummonVesselSpell;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -18,7 +21,13 @@ public class ModSpells {
         return SPELLS.register(spell.getSpellName(), () -> spell);
     }
 
+
+
     public static final Supplier<AbstractSpell> SUMMON_BLAZE = registerSpell(new SummonBlazesSpell());
+
+    public static final Supplier<AbstractSpell> BANSHEE_SHOT = registerSpell(new BansheeShotSpell());
+    public static final Supplier<AbstractSpell> SUMMON_VESSEL = registerSpell(new SummonVesselSpell());
+    public static final Supplier<AbstractSpell> SUMMON_BANSHEE = registerSpell(new SummonBansheeSpell());
 
 
     public static void register(IEventBus eventBus)
