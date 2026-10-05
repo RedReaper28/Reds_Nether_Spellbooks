@@ -21,6 +21,8 @@ public class ModCreativeTabs {
                         output.accept(ModItems.FIREBOLT_SHELL.get());
                         output.accept(ModItems.BANSHEE_SPELL_BOOK.get());
 
+                        output.accept(ModBlocks.BRAZIER_TREACHEROUS.get());
+
                     }).build());
 
     public static void register(IEventBus eventBus){

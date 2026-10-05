@@ -44,6 +44,7 @@ public class RedsNetherSpellbooks {
 
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModEntities.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModSpells.register(modEventBus);

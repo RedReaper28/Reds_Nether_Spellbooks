@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "hanging=false,lit=true": {
+      "model": "reds_nether_spellbooks:block/brazier_treacherous"
+    },
+    "hanging=false,lit=false": {
+      "model": "irons_spellbooks:block/brazier_off"
+    },
+    "hanging=true,lit=true": {
+      "model": "reds_nether_spellbooks:block/hanging_brazier_treacherous"
+    },
+    "hanging=true,lit=false": {
+      "model": "irons_spellbooks:block/hanging_brazier_off"
+    }
+  }
+}

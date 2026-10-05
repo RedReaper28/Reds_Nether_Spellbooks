@@ -1,0 +1,7 @@
+{
+  "parent": "irons_spellbooks:block/hanging_brazier_template",
+  "textures": {
+    "fire": "netherexp:block/treacherous_campfire_fire",
+    "log": "netherexp:block/treacherous_campfire_log_lit"
+  }
+}

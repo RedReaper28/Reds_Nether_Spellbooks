@@ -1,43 +1,37 @@
-package com.redreaper.red_nether_spellbooks.entity.spells.banshee_shot;
+package com.redreaper.red_nether_spellbooks.entity.spells.black_icicle;
 
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
 import com.redreaper.red_nether_spellbooks.init.ModSpells;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.damage.DamageSources;
-import net.jadenxgamer.netherexp.core.entity.WillOWisp;
-import net.jadenxgamer.netherexp.registry.JNEEntityType;
+import net.jadenxgamer.netherexp.core.entity.BlackIcicle;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
-public class ExtendedWillOWisp extends WillOWisp {
+public class ExtendedBlackIcicle extends BlackIcicle {
     protected float damage;
-    LivingEntity target;
-
-    public ExtendedWillOWisp(EntityType<? extends ThrowableItemProjectile> entityType, Level level) {
-        super(entityType, level);
-        this.damage = 3;
+    public ExtendedBlackIcicle(EntityType type, double x, double y, double z, Level worldIn) {
+        super(type, worldIn);
         this.setNoGravity(true);
-    }
-
-    public ExtendedWillOWisp(LivingEntity shooter, Level level, LivingEntity target) {
-        this(shooter, level, target, shooter.getX(), shooter.getY() + (double)1.0F, shooter.getZ(), 3);
-    }
-
-    public ExtendedWillOWisp(LivingEntity shooter, Level level, LivingEntity target, double x, double y, double z, int damage) {
-        super(ModEntities.EXTENDED_WILL_O_WISP.get(), level);
-        this.damage = 3;
-        this.noPhysics = true;
-        this.target = target;
-        this.damage = damage;
         this.setPos(x, y, z);
-        setOwner(shooter);
+    }
+
+    public ExtendedBlackIcicle(EntityType type, Level worldIn) {
+        super(type, worldIn);
+    }
+
+
+    public ExtendedBlackIcicle(Level worldIn, LivingEntity shooter) {
+        this(ModEntities.EXTENDED_BLACK_ICICLE.get(), shooter.getX(), shooter.getEyeY(), shooter.getZ(), worldIn);
+        this.setOwner(shooter);
     }
 
     @Override
@@ -45,7 +39,8 @@ public class ExtendedWillOWisp extends WillOWisp {
         super.onHitEntity(entityHitResult);
         var target = entityHitResult.getEntity();
         if (target instanceof LivingEntity living) {
-            DamageSources.applyDamage(target, getDamage(), ModSpells.BANSHEE_SHOT.get().getDamageSource(this, getOwner()));
+            DamageSources.applyDamage(target, getDamage(), ModSpells.BLACK_ICICLE.get().getDamageSource(this, getOwner()));
+            living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 7 * 20, 1));
         }
     }
 
@@ -55,22 +50,24 @@ public class ExtendedWillOWisp extends WillOWisp {
             this.level().broadcastEntityEvent(this, (byte)3);
             this.discard();
         }
+
     }
 
-
+    public float getSpeed() {
+        return 1.75f;
+    }
 
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.putFloat("Damage", this.getDamage());
-        tag.put("Target", (Tag) this.getTarget());
+        tag.putInt("Age", tickCount);
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
         this.damage = tag.getFloat("Damage");
-        this.target = (LivingEntity) tag.get("Target");
     }
 
     public void setDamage(float damage) {
@@ -81,12 +78,7 @@ public class ExtendedWillOWisp extends WillOWisp {
         return damage;
     }
 
-    public void setTarget(LivingEntity damage) {
-        this.target = target;
+    public void shoot(Vec3 rotation) {
+        setDeltaMovement(rotation.scale(getSpeed()));
     }
-
-    public LivingEntity getTarget() {
-        return target;
-    }
-
 }

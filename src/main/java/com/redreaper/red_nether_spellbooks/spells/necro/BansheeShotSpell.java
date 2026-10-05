@@ -2,6 +2,7 @@ package com.redreaper.red_nether_spellbooks.spells.necro;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
 import com.redreaper.red_nether_spellbooks.entity.spells.banshee_shot.ExtendedWillOWisp;
+import com.redreaper.red_nether_spellbooks.entity.spells.black_icicle.ExtendedBlackIcicle;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SchoolRegistry;
@@ -11,6 +12,7 @@ import io.redspace.ironsspellbooks.capabilities.magic.MultiTargetEntityCastData;
 import io.redspace.ironsspellbooks.capabilities.magic.RecastInstance;
 import io.redspace.ironsspellbooks.capabilities.magic.TargetEntityCastData;
 import io.redspace.ironsspellbooks.damage.SpellDamageSource;
+import net.jadenxgamer.netherexp.core.entity.WillOWisp;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +20,6 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -82,9 +83,7 @@ public class BansheeShotSpell extends AbstractSpell {
 
         if (playerMagicData.getAdditionalCastData() instanceof TargetEntityCastData targetingData) {
             var targetEntity = targetingData.getTarget((ServerLevel) level);
-            ExtendedWillOWisp willOWisp = new ExtendedWillOWisp(entity, level ,targetEntity);
-            willOWisp.setPos(Utils.getPositionFromEntityLookDirection(entity, 2).subtract(0, .2, 0));
-            willOWisp.setDamage(getDamage(spellLevel, entity));
+            WillOWisp willOWisp = new WillOWisp(entity, level, targetEntity);
             level.addFreshEntity(willOWisp);
         }
     }
