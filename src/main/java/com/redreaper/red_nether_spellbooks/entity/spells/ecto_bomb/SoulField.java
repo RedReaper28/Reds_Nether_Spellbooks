@@ -5,7 +5,10 @@ import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import io.redspace.ironsspellbooks.entity.spells.AoeEntity;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
+import net.jadenxgamer.netherexp.registry.JNEAttachmentTypes;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -35,6 +38,7 @@ public class SoulField extends AoeEntity {
             DamageSources.ignoreNextKnockback(target);
             if (target.hurt(damageSource, getDamage())) {
                 target.setRemainingFireTicks(60);
+                target.setData(JNEAttachmentTypes.LAST_FIRE.get(), ResourceLocation.parse("minecraft:soul_fire"));
             }
         }
     }
@@ -56,6 +60,6 @@ public class SoulField extends AoeEntity {
 
     @Override
     public Optional<ParticleOptions> getParticle() {
-        return Optional.of(ParticleHelper.SOUL_FIRE);
+        return Optional.of(ParticleTypes.SOUL_FIRE_FLAME);
     }
 }

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IFI",
+    " I "
+  ],
+  "key": {
+    "F": {
+      "item": "netherexp:treacherous_campfire"
+    },
+    "I": {
+      "tag": "c:nuggets/iron"
+    }
+  },
+  "result": {
+    "id": "reds_nether_spellbooks:brazier_treacherous",
+    "count": 1
+  }
+}

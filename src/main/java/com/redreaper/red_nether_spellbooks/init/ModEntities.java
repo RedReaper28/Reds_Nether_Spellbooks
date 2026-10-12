@@ -1,18 +1,13 @@
 package com.redreaper.red_nether_spellbooks.init;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
-import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonBansheeEntity;
-import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonCarcassEntity;
-import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonVesselEntity;
-import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonedBlazeEntity;
+import com.redreaper.red_nether_spellbooks.entity.living.soul_keeper.SoulKeeperEntity;
+import com.redreaper.red_nether_spellbooks.entity.living.summon.*;
 import com.redreaper.red_nether_spellbooks.entity.spells.banshee_shot.ExtendedWillOWisp;
 import com.redreaper.red_nether_spellbooks.entity.spells.black_icicle.ExtendedBlackIcicle;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulBomb;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulField;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPellet;
-import io.redspace.ironsspellbooks.IronsSpellbooks;
-import io.redspace.ironsspellbooks.entity.spells.magma_ball.FireBomb;
-import io.redspace.ironsspellbooks.entity.spells.magma_ball.FireField;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -61,23 +56,30 @@ public class ModEntities {
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "summoned_blaze").toString()));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<SummonVesselEntity>> SUMMONED_VESSEL =
-            ENTITIES.register("summoned_vessel", () -> EntityType.Builder.<SummonVesselEntity>of(SummonVesselEntity::new, MobCategory.MONSTER).
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonedVesselEntity>> SUMMONED_VESSEL =
+            ENTITIES.register("summoned_vessel", () -> EntityType.Builder.<SummonedVesselEntity>of(SummonedVesselEntity::new, MobCategory.MONSTER).
                     sized(0.8f, 2.6f).fireImmune()
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "summoned_vessel").toString()));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<SummonBansheeEntity>> SUMMONED_BANSHEE =
-            ENTITIES.register("summoned_banshee", () -> EntityType.Builder.<SummonBansheeEntity>of(SummonBansheeEntity::new, MobCategory.MONSTER).
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonedBansheeEntity>> SUMMONED_BANSHEE =
+            ENTITIES.register("summoned_banshee", () -> EntityType.Builder.<SummonedBansheeEntity>of(SummonedBansheeEntity::new, MobCategory.MONSTER).
                     sized(1.25f, 2.375f).fireImmune()
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "summoned_banshee").toString()));
 
-    public static final DeferredHolder<EntityType<?>, EntityType<SummonCarcassEntity>> SUMMONED_CARCASS =
-            ENTITIES.register("summoned_carcass", () -> EntityType.Builder.<SummonCarcassEntity>of(SummonCarcassEntity::new, MobCategory.MONSTER).
+    public static final DeferredHolder<EntityType<?>, EntityType<SummonedCarcassEntity>> SUMMONED_CARCASS =
+            ENTITIES.register("summoned_carcass", () -> EntityType.Builder.<SummonedCarcassEntity>of(SummonedCarcassEntity::new, MobCategory.MONSTER).
                     sized(1.25f, 2.375f).fireImmune()
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "summoned_carcass").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<SoulKeeperEntity>> SOUL_KEEPER =
+            ENTITIES.register("soul_keeper", () -> EntityType.Builder.<SoulKeeperEntity>of(SoulKeeperEntity::new, MobCategory.MONSTER)
+                    .sized(.85f, 2.3f)
+                    .clientTrackingRange(64)
+                    .eyeHeight(2.3f)
+                    .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "soul_keeper").toString()));
 
 
     public static void register(IEventBus eventBus)

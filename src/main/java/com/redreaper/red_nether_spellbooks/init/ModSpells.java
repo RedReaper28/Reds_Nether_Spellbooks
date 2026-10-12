@@ -24,6 +24,7 @@ public class ModSpells {
     public static final Supplier<AbstractSpell> ECTO_BOMB = registerSpell(new EctoBombSpell());
     public static final Supplier<AbstractSpell> SUMMON_BANSHEE = registerSpell(new SummonBansheeSpell());
     public static final Supplier<AbstractSpell> SUMMON_VESSEL = registerSpell(new SummonVesselSpell());
+    public static final Supplier<AbstractSpell> WRAITHING_WOUNDS = registerSpell(new WraithingWoundsSpell());
 
     public static final Supplier<AbstractSpell> SUMMON_BLAZE = registerSpell(new SummonBlazesSpell());
 

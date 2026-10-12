@@ -1,8 +1,7 @@
 package com.redreaper.red_nether_spellbooks.spells.necro;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
-import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonVesselEntity;
-import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonedBlazeEntity;
+import com.redreaper.red_nether_spellbooks.entity.living.summon.SummonedVesselEntity;
 import io.redspace.ironsspellbooks.api.config.DefaultConfig;
 import io.redspace.ironsspellbooks.api.events.SpellSummonEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
@@ -110,7 +109,7 @@ public class SummonVesselSpell extends AbstractSpell {
 
     private void spawnKoboleton(double x, double y, double z, LivingEntity caster, Level level, int summonTimer, int spellLevel, SummonedEntitiesCastData castData)
     {
-        SummonVesselEntity koboleton = new SummonVesselEntity(level, caster);
+        SummonedVesselEntity koboleton = new SummonedVesselEntity(level, caster);
 
         var event = NeoForge.EVENT_BUS.post(new SpellSummonEvent<>(caster, koboleton, this.spellId, spellLevel)).getCreature();
 

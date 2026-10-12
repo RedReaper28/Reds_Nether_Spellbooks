@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " # ",
+    "#X#",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "irons_spellbooks:cinder_essence"
+    },
+    "X": {
+      "item": "netherexp:shotgun_shell"
+    }
+  },
+  "result": {
+    "id": "reds_nether_spellbooks:firebolt_shotgun_shell",
+    "count": 8
+  }
+}

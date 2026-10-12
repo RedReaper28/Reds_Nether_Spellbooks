@@ -24,16 +24,16 @@ import net.minecraft.world.level.Level;
 
 import java.util.UUID;
 
-public class SummonVesselEntity extends Vessel implements IMagicSummon {
+public class SummonedVesselEntity extends Vessel implements IMagicSummon {
     protected LivingEntity cachedSummoner;
     protected UUID summonerUUID;
 
-    public SummonVesselEntity(EntityType<? extends Vessel> pEntityType, Level pLevel) {
+    public SummonedVesselEntity(EntityType<? extends Vessel> pEntityType, Level pLevel) {
         super(ModEntities.SUMMONED_VESSEL.get(), pLevel);
         xpReward = 0;
     }
 
-    public SummonVesselEntity(Level level, LivingEntity owner) {
+    public SummonedVesselEntity(Level level, LivingEntity owner) {
         this(ModEntities.SUMMONED_VESSEL.get(), level);
     }
 

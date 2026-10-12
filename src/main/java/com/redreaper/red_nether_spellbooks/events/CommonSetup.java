@@ -20,5 +20,7 @@ public class CommonSetup {
         event.put(ModEntities.SUMMONED_CARCASS.get(), Carcass.createAttributes().build());
         event.put(ModEntities.SUMMONED_VESSEL.get(), Vessel.createAttributes().build());
 
+        event.put(ModEntities.SOUL_KEEPER.get(), Vessel.createAttributes().build());
+
     }
 }

@@ -1,6 +1,7 @@
 package com.redreaper.red_nether_spellbooks.events;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
+import com.redreaper.red_nether_spellbooks.entity.living.soul_keeper.SoulKeeperRenderer;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulBombRenderer;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPelletRenderer;
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
@@ -27,6 +28,8 @@ public class ClientSetup {
         EntityRenderers.register(ModEntities.SUMMONED_BANSHEE.get(), BansheeRenderer::new);
         EntityRenderers.register(ModEntities.SUMMONED_CARCASS.get(), CarcassRenderer::new);
         EntityRenderers.register(ModEntities.SUMMONED_VESSEL.get(), VesselRenderer::new);
+
+        EntityRenderers.register(ModEntities.SOUL_KEEPER.get(), SoulKeeperRenderer::new);
 
     }
 

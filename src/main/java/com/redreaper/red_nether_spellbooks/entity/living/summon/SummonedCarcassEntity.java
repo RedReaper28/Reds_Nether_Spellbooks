@@ -1,16 +1,12 @@
 package com.redreaper.red_nether_spellbooks.entity.living.summon;
 
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
-import com.redreaper.red_nether_spellbooks.init.ModSpells;
-import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.entity.mobs.IMagicSummon;
 import io.redspace.ironsspellbooks.entity.mobs.goals.*;
 import io.redspace.ironsspellbooks.util.OwnerHelper;
-import net.jadenxgamer.netherexp.core.entity.Banshee;
-import net.jadenxgamer.netherexp.core.entity.Vessel;
+import net.jadenxgamer.netherexp.core.entity.Carcass;
 import net.jadenxgamer.netherexp.registry.JNEParticleTypes;
-import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -26,17 +22,17 @@ import net.minecraft.world.level.Level;
 
 import java.util.UUID;
 
-public class SummonBansheeEntity extends Banshee implements IMagicSummon {
+public class SummonedCarcassEntity extends Carcass implements IMagicSummon {
     protected LivingEntity cachedSummoner;
     protected UUID summonerUUID;
 
-    public SummonBansheeEntity(EntityType<? extends Banshee> pEntityType, Level pLevel) {
-        super(ModEntities.SUMMONED_BANSHEE.get(), pLevel);
+    public SummonedCarcassEntity(EntityType<? extends Carcass> pEntityType, Level pLevel) {
+        super(ModEntities.SUMMONED_CARCASS.get(), pLevel);
         xpReward = 0;
     }
 
-    public SummonBansheeEntity(Level level, LivingEntity owner) {
-        this(ModEntities.SUMMONED_BANSHEE.get(), level);
+    public SummonedCarcassEntity(Level level, LivingEntity owner) {
+        this(ModEntities.SUMMONED_CARCASS.get(), level);
     }
 
     @Override
@@ -78,7 +74,7 @@ public class SummonBansheeEntity extends Banshee implements IMagicSummon {
     public void onUnSummon() {
         if (!level().isClientSide)
         {
-            MagicManager.spawnParticles(level(), JNEParticleTypes.SMALL_SOUL_FIRE_FLAME.get(),
+            MagicManager.spawnParticles(level(), JNEParticleTypes.TREACHEROUS_FLAME.get(),
                     getX(), getY(), getZ(),
                     25,
                     level().random.nextGaussian() * 0.007D,
@@ -107,11 +103,6 @@ public class SummonBansheeEntity extends Banshee implements IMagicSummon {
         {
             return this.getTeam() == null && entityIn.getTeam() == null;
         }
-    }
-
-    @Override
-    public boolean doHurtTarget(Entity pEntity) {
-        return Utils.doMeleeAttack(this, pEntity, ModSpells.SUMMON_BANSHEE.get().getDamageSource(this, getSummoner()));
     }
 
     // NBT

@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "entity": "this",
+      "predicate": {
+        "type": "netherexp:banshee"
+      }
+    }
+  ],
+  "type":"reds_nether_spellbooks:add_to_table",
+  "loot_table": "reds_nether_spellbooks:entities/additional_banshee_loot.json"
+}

@@ -40,7 +40,7 @@ public class ExtendedBlackIcicle extends BlackIcicle {
         var target = entityHitResult.getEntity();
         if (target instanceof LivingEntity living) {
             DamageSources.applyDamage(target, getDamage(), ModSpells.BLACK_ICICLE.get().getDamageSource(this, getOwner()));
-            living.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 7 * 20, 1));
+            living.addEffect(new MobEffectInstance(MobEffects.WITHER, 7 * 20, 1));
         }
     }
 
