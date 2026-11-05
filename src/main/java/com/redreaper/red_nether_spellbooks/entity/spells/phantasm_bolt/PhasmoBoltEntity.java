@@ -1,5 +1,7 @@
 package com.redreaper.red_nether_spellbooks.entity.spells.phantasm_bolt;
 
+import com.redreaper.red_nether_spellbooks.init.ModEntities;
+import com.redreaper.red_nether_spellbooks.init.ModSpells;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
@@ -41,7 +43,7 @@ public class PhasmoBoltEntity extends AbstractMagicProjectile {
     }
 
     public PhasmoBoltEntity(Level levelIn, LivingEntity shooter) {
-        this(EntityRegistry.MAGIC_ARROW_PROJECTILE.get(), levelIn);
+        this(ModEntities.PHASMO_BOLT.get(), levelIn);
         setOwner(shooter);
     }
 
@@ -85,7 +87,7 @@ public class PhasmoBoltEntity extends AbstractMagicProjectile {
     protected void onHitEntity(@NotNull EntityHitResult entityHitResult) {
         Entity entity = entityHitResult.getEntity();
         if (!victims.contains(entity.getUUID())) {
-            DamageSources.applyDamage(entity, damage, SpellRegistry.MAGIC_ARROW_SPELL.get().getDamageSource(this, getOwner()));
+            DamageSources.applyDamage(entity, damage, ModSpells.PHASMO_BOLT.get().getDamageSource(this, getOwner()));
                 entity.setRemainingFireTicks(60);
                 entity.setData(JNEAttachmentTypes.LAST_FIRE.get(), ResourceLocation.parse("minecraft:soul_fire"));
             victims.add(entity.getUUID());

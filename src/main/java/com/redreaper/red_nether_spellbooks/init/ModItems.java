@@ -2,6 +2,10 @@ package com.redreaper.red_nether_spellbooks.init;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPellet;
+import com.redreaper.red_nether_spellbooks.item.curios.necklace.QuartzNecklace;
+import com.redreaper.red_nether_spellbooks.item.curios.necklace.SoulBurnNecklace;
+import com.redreaper.red_nether_spellbooks.item.curios.necklace.TreacherusNecklace;
+import com.redreaper.red_nether_spellbooks.item.curios.ring.SpellPowerRing;
 import com.redreaper.red_nether_spellbooks.item.curios.spellbooks.BansheeSpellBookIte;
 import net.jadenxgamer.netherexp.core.item.ShotgunShellItem;
 import net.minecraft.world.item.Item;
@@ -19,6 +23,18 @@ public class ModItems {
 
     public static final DeferredHolder<Item, Item> BANSHEE_SPELL_BOOK = ITEMS.register("banshee_spell_book",
             BansheeSpellBookIte::new);
+
+
+    public static final DeferredHolder<Item, Item> SPELL_POWER_RING = ITEMS.register("spell_power_ring",
+            SpellPowerRing::new);
+
+    public static final DeferredHolder<Item, Item> QUARTZ_PURITY_CHARM = ITEMS.register("quartz_purity_charm",
+            QuartzNecklace::new);
+
+    public static final DeferredHolder<Item, Item> SOUL_BURN_NECKLACE = ITEMS.register("soul_burn_talisman",
+            SoulBurnNecklace::new);
+    public static final DeferredHolder<Item, Item> TREACHEROUS_NECKLACE = ITEMS.register("treacherous_talisman",
+            TreacherusNecklace::new);
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

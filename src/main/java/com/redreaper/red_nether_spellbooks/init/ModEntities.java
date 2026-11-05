@@ -8,6 +8,9 @@ import com.redreaper.red_nether_spellbooks.entity.spells.black_icicle.ExtendedBl
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulBomb;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulField;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPellet;
+import com.redreaper.red_nether_spellbooks.entity.spells.phantasm_bolt.PhasmoBoltEntity;
+import io.redspace.ironsspellbooks.IronsSpellbooks;
+import io.redspace.ironsspellbooks.entity.spells.magic_arrow.MagicArrowProjectile;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -39,6 +42,13 @@ public class ModEntities {
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "soul_field").toString()));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<PhasmoBoltEntity>> PHASMO_BOLT =
+            ENTITIES.register("phasmo_bolt", () -> EntityType.Builder.<PhasmoBoltEntity>of(PhasmoBoltEntity::new, MobCategory.MISC)
+                    .sized(.8f, .8f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "phasmo_bolt").toString()));
+
+
     public static final DeferredHolder<EntityType<?>, EntityType<ExtendedWillOWisp>> EXTENDED_WILL_O_WISP  =
             ENTITIES.register("extended_will_o_wisp", () -> EntityType.Builder.<ExtendedWillOWisp>of(ExtendedWillOWisp::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f)
@@ -67,12 +77,6 @@ public class ModEntities {
                     sized(1.25f, 2.375f).fireImmune()
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "summoned_banshee").toString()));
-
-    public static final DeferredHolder<EntityType<?>, EntityType<SummonedCarcassEntity>> SUMMONED_CARCASS =
-            ENTITIES.register("summoned_carcass", () -> EntityType.Builder.<SummonedCarcassEntity>of(SummonedCarcassEntity::new, MobCategory.MONSTER).
-                    sized(1.25f, 2.375f).fireImmune()
-                    .clientTrackingRange(64)
-                    .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "summoned_carcass").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<SoulKeeperEntity>> SOUL_KEEPER =
             ENTITIES.register("soul_keeper", () -> EntityType.Builder.<SoulKeeperEntity>of(SoulKeeperEntity::new, MobCategory.MONSTER)

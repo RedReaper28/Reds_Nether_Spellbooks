@@ -4,6 +4,7 @@ import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
 import com.redreaper.red_nether_spellbooks.entity.living.soul_keeper.SoulKeeperRenderer;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulBombRenderer;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPelletRenderer;
+import com.redreaper.red_nether_spellbooks.entity.spells.phantasm_bolt.PhasmoBoltRenderer;
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
 import net.jadenxgamer.netherexp.client.rendering.entity.*;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -21,12 +22,12 @@ public class ClientSetup {
         EntityRenderers.register(ModEntities.FIREBOLT_PELLET.get(), FireboltPelletRenderer::new);
         EntityRenderers.register(ModEntities.ECTO_BOMB.get(), SoulBombRenderer::new);
         EntityRenderers.register(ModEntities.SOUL_FIELD.get(), NoopRenderer::new);
+        EntityRenderers.register(ModEntities.PHASMO_BOLT.get(), PhasmoBoltRenderer::new);
         EntityRenderers.register(ModEntities.EXTENDED_BLACK_ICICLE.get(), BlackIcicleRenderer::new);
         EntityRenderers.register(ModEntities.EXTENDED_WILL_O_WISP.get(), WillOWispRenderer::new);
 
         EntityRenderers.register(ModEntities.SUMMONED_BLAZE.get(), JNEBlazeRenderer::new);
         EntityRenderers.register(ModEntities.SUMMONED_BANSHEE.get(), BansheeRenderer::new);
-        EntityRenderers.register(ModEntities.SUMMONED_CARCASS.get(), CarcassRenderer::new);
         EntityRenderers.register(ModEntities.SUMMONED_VESSEL.get(), VesselRenderer::new);
 
         EntityRenderers.register(ModEntities.SOUL_KEEPER.get(), SoulKeeperRenderer::new);

@@ -20,6 +20,10 @@ public class ModCreativeTabs {
                     .displayItems((itemDisplayParameters, output) ->{
                         output.accept(ModItems.FIREBOLT_SHELL.get());
                         output.accept(ModItems.BANSHEE_SPELL_BOOK.get());
+                        output.accept(ModItems.SPELL_POWER_RING.get());
+                        output.accept(ModItems.QUARTZ_PURITY_CHARM.get());
+                        output.accept(ModItems.SOUL_BURN_NECKLACE.get());
+                        output.accept(ModItems.TREACHEROUS_NECKLACE.get());
 
                         output.accept(ModBlocks.BRAZIER_TREACHEROUS.get());
 

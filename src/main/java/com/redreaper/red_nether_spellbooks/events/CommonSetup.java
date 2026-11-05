@@ -17,7 +17,6 @@ public class CommonSetup {
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
         event.put(ModEntities.SUMMONED_BLAZE.get(), Blaze.createAttributes().build());
         event.put(ModEntities.SUMMONED_BANSHEE.get(), Banshee.createAttributes().build());
-        event.put(ModEntities.SUMMONED_CARCASS.get(), Carcass.createAttributes().build());
         event.put(ModEntities.SUMMONED_VESSEL.get(), Vessel.createAttributes().build());
 
         event.put(ModEntities.SOUL_KEEPER.get(), Vessel.createAttributes().build());

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " L ",
+    "L L",
+    "AL "
+  ],
+  "key": {
+    "L": {
+      "item": "irons_spellbooks:hogskin"
+    },
+    "A": {
+      "tag": "c:gems/quartz"
+    }
+  },
+  "result": {
+    "id": "reds_nether_spellbooks:quartz_purity_charm",
+    "count": 1
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "reds_nether_spellbooks:quartz_purity_charm",
+    "reds_nether_spellbooks:soul_burn_talisman",
+    "reds_nether_spellbooks:treacherous_talisman"
+  ]
+}
