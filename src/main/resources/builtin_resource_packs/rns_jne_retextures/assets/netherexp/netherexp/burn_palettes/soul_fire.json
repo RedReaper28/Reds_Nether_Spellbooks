@@ -1,0 +1,14 @@
+{
+  "blocks": "minecraft:soul_fire",
+  "replace_particles": [
+    "minecraft:soul_fire_flame",
+    "netherexp:small_soul_fire_flame",
+    "buzzier_bees:small_soul_fire_flame"
+  ],
+  "palette1": "#ecfeff",
+  "palette2": "#cdfbfe",
+  "palette3": "#8aeafb",
+  "palette4": "#52b1f2",
+  "palette5": "#5584de",
+  "palette6": "#614ab7"
+}
