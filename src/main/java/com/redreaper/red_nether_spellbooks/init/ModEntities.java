@@ -5,10 +5,12 @@ import com.redreaper.red_nether_spellbooks.entity.living.soul_keeper.SoulKeeperE
 import com.redreaper.red_nether_spellbooks.entity.living.summon.*;
 import com.redreaper.red_nether_spellbooks.entity.spells.banshee_shot.ExtendedWillOWisp;
 import com.redreaper.red_nether_spellbooks.entity.spells.black_icicle.ExtendedBlackIcicle;
+import com.redreaper.red_nether_spellbooks.entity.spells.ebony_shatter.EbonyShatterEntity;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulBomb;
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulField;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPellet;
 import com.redreaper.red_nether_spellbooks.entity.spells.phantasm_bolt.PhasmoBoltEntity;
+import com.redreaper.red_nether_spellbooks.entity.spells.pyroclast_daggers.PyroclastDaggerProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import io.redspace.ironsspellbooks.entity.spells.magic_arrow.MagicArrowProjectile;
 import net.minecraft.resources.ResourceLocation;
@@ -47,6 +49,18 @@ public class ModEntities {
                     .sized(.8f, .8f)
                     .clientTrackingRange(64)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "phasmo_bolt").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<PyroclastDaggerProjectile>> PYROCLAST_DAGGER =
+            ENTITIES.register("pyroclast_dagger", () -> EntityType.Builder.<PyroclastDaggerProjectile>of(PyroclastDaggerProjectile::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(4)
+                    .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "pyroclast_dagger").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<EbonyShatterEntity>>EBONY_SHATTER =
+            ENTITIES.register("ebony_shatter", () -> EntityType.Builder.<EbonyShatterEntity>of(EbonyShatterEntity::new, MobCategory.MISC)
+                    .sized(1.5f, 1)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "ebony_shatter").toString()));
 
 
     public static final DeferredHolder<EntityType<?>, EntityType<ExtendedWillOWisp>> EXTENDED_WILL_O_WISP  =

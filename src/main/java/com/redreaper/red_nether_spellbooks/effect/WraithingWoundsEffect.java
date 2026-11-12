@@ -1,6 +1,7 @@
 package com.redreaper.red_nether_spellbooks.effect;
 
 import com.redreaper.red_nether_spellbooks.init.ModMobEffects;
+import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.effect.ISyncedMobEffect;
 import io.redspace.ironsspellbooks.effect.MagicMobEffect;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
@@ -29,7 +30,7 @@ public class WraithingWoundsEffect extends MagicMobEffect implements ISyncedMobE
         }
 
         if (entityTarget instanceof Player player) {
-            player.addEffect(new MobEffectInstance(MobEffectRegistry.SLOWED, 10*20, 9));
+            Utils.addEffectStack(player, MobEffectRegistry.SLOWED, 20, 10*20);
             player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 5*20, 1));
 
         }

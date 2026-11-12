@@ -14,8 +14,11 @@
   "entity.reds_nether_spellbooks.summoned_banshee": "Summoned Banshee",
   "entity.reds_nether_spellbooks.summoned_vessel": "Summoned Vessel",
 
+  "effect.reds_nether_spellbooks.ice_shatter": "Ice Shatter",
   "effect.reds_nether_spellbooks.wraithing_wounds": "Wraithing Wounds",
 
+  "spell.reds_nether_spellbooks.pyroclast_daggers": "Pyroclast Daggers",
+  "spell.reds_nether_spellbooks.pyroclast_daggers.guide": "Hold to unleash a barrage of 4 daggers made out of pyroclast in a wide angle, igniting any creature they hit",
   "spell.reds_nether_spellbooks.summon_blaze": "Summon Blaze Guard",
   "spell.reds_nether_spellbooks.summon_blaze.guide": "Cast to conjure Blazes that will follow,protect and fight for you",
 
@@ -23,15 +26,20 @@
   "spell.reds_nether_spellbooks.ecto_bomb.guide": "Launch a bomb made from souls, exploding on impact and leaving a field of soul fire where it lands",
   "spell.reds_nether_spellbooks.phasmo_bolt": "Phasmo Bolt",
   "spell.reds_nether_spellbooks.phasmo_bolt.guide": "Shot a powerful ecto shard forward that pierces both block and enemies and damages creatures that it phases thorough",
+  "spell.reds_nether_spellbooks.soulfire_ray": "Soulfire Ray",
+  "spell.reds_nether_spellbooks.soulfire_ray.guide": "Fires a beam of soul fire, dealing low damage but reducing healing to the creature it hit",
   "spell.reds_nether_spellbooks.summon_banshee": "Summon Banshee Haunting",
   "spell.reds_nether_spellbooks.summon_banshee.guide": "Cast to conjure Banshees that will follow,protect and fight for you",
   "spell.reds_nether_spellbooks.summon_vessel": "Summon Vessel Duo",
   "spell.reds_nether_spellbooks.summon_vessel.guide": "Cast to conjure Vessels that will follow,protect and fight for you",
   "spell.reds_nether_spellbooks.wraithing_wounds": "Wraithing Wounds",
-  "spell.reds_nether_spellbooks.wraithing_wounds.guide": "Imbue yourself with necrotic energy, healing your wounds when receiving damage at the cost of decreasing your movement speed, attack speed, mining speed, and cast time reduction",
+  "spell.reds_nether_spellbooks.wraithing_wounds.guide": "Imbue yourself with necrotic energy, healing your wounds when receiving damage at the cost of decreasing your movement speed, attack speed, mining speed, and cast time reduction by 0.025% each time up to 50$",
 
   "spell.reds_nether_spellbooks.black_icicle": "Black Icicle",
   "spell.reds_nether_spellbooks.black_icicle.guide": "Fire a piercing bolt of withering cold energy in the form of an icicle, inflicting a Cryonecrosis to those it pierces",
+
+  "spell.reds_nether_spellbooks.ebony_shatter": "Ebony Shatter",
+  "spell.reds_nether_spellbooks.ebony_shatter.guide": "",
 
   "creative_tab.reds_nether_spellbooks.reds_nether_spellbooks": "Red's Nether Spells 'n Spellbooks"
 }

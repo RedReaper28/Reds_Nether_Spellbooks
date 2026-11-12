@@ -5,6 +5,7 @@ import com.redreaper.red_nether_spellbooks.entity.living.soul_keeper.SoulKeeperR
 import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulBombRenderer;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPelletRenderer;
 import com.redreaper.red_nether_spellbooks.entity.spells.phantasm_bolt.PhasmoBoltRenderer;
+import com.redreaper.red_nether_spellbooks.entity.spells.pyroclast_daggers.PyroclastDaggerRenderer;
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
 import net.jadenxgamer.netherexp.client.rendering.entity.*;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -23,6 +24,9 @@ public class ClientSetup {
         EntityRenderers.register(ModEntities.ECTO_BOMB.get(), SoulBombRenderer::new);
         EntityRenderers.register(ModEntities.SOUL_FIELD.get(), NoopRenderer::new);
         EntityRenderers.register(ModEntities.PHASMO_BOLT.get(), PhasmoBoltRenderer::new);
+        EntityRenderers.register(ModEntities.PYROCLAST_DAGGER.get(), PyroclastDaggerRenderer::new);
+        EntityRenderers.register(ModEntities.EBONY_SHATTER.get(), NoopRenderer::new);
+
         EntityRenderers.register(ModEntities.EXTENDED_BLACK_ICICLE.get(), BlackIcicleRenderer::new);
         EntityRenderers.register(ModEntities.EXTENDED_WILL_O_WISP.get(), WillOWispRenderer::new);
 

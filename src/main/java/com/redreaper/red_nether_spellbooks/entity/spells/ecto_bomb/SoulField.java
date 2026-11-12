@@ -7,7 +7,6 @@ import io.redspace.ironsspellbooks.entity.spells.AoeEntity;
 import io.redspace.ironsspellbooks.util.ParticleHelper;
 import net.jadenxgamer.netherexp.registry.JNEAttachmentTypes;
 import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -60,6 +59,6 @@ public class SoulField extends AoeEntity {
 
     @Override
     public Optional<ParticleOptions> getParticle() {
-        return Optional.of(ParticleTypes.SOUL_FIRE_FLAME);
+        return Optional.of(ParticleHelper.SOUL_FIRE);
     }
 }

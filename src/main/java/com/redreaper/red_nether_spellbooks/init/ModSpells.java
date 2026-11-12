@@ -1,8 +1,10 @@
 package com.redreaper.red_nether_spellbooks.init;
 
 import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
+import com.redreaper.red_nether_spellbooks.spells.fire.PyroclastDaggersSpell;
 import com.redreaper.red_nether_spellbooks.spells.fire.SummonBlazesSpell;
 import com.redreaper.red_nether_spellbooks.spells.ice.BlackIcicleSpell;
+import com.redreaper.red_nether_spellbooks.spells.ice.EbonyShatterSpell;
 import com.redreaper.red_nether_spellbooks.spells.necro.*;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import net.neoforged.bus.api.IEventBus;
@@ -23,13 +25,17 @@ public class ModSpells {
     public static final Supplier<AbstractSpell> BANSHEE_SHOT = registerSpell(new BansheeShotSpell());
     public static final Supplier<AbstractSpell> ECTO_BOMB = registerSpell(new EctoBombSpell());
     public static final Supplier<AbstractSpell> PHASMO_BOLT = registerSpell(new PhasmoBoltSpell());
+    public static final Supplier<AbstractSpell> SOULFIRE_RAY = registerSpell(new SoulFireRaySpell());
     public static final Supplier<AbstractSpell> SUMMON_BANSHEE = registerSpell(new SummonBansheeSpell());
     public static final Supplier<AbstractSpell> SUMMON_VESSEL = registerSpell(new SummonVesselSpell());
     public static final Supplier<AbstractSpell> WRAITHING_WOUNDS = registerSpell(new WraithingWoundsSpell());
 
+    public static final Supplier<AbstractSpell> PYROCLAST_DAGGERS = registerSpell(new PyroclastDaggersSpell());
     public static final Supplier<AbstractSpell> SUMMON_BLAZE = registerSpell(new SummonBlazesSpell());
 
     public static final Supplier<AbstractSpell> BLACK_ICICLE = registerSpell(new BlackIcicleSpell());
+    public static final Supplier<AbstractSpell> EBONY_SHATTER = registerSpell(new EbonyShatterSpell());
+
 
 
     public static void register(IEventBus eventBus)

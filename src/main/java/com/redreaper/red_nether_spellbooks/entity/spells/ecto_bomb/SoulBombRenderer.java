@@ -3,8 +3,9 @@ package com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
-import com.redreaper.red_nether_spellbooks.RedsNetherSpellbooks;
+import io.redspace.ironsspellbooks.IronsSpellbooks;
 import io.redspace.ironsspellbooks.entity.spells.acid_orb.AcidOrbRenderer;
+import net.jadenxgamer.netherexp.NetherExp;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -16,25 +17,20 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec3;
 
-public class SoulBombRenderer  extends EntityRenderer<SoulBomb> {
-    private static ResourceLocation TEXTURE [] = {
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/magma_0.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/magma_1.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/magma_2.png")
-    };
-
+public class SoulBombRenderer extends EntityRenderer<SoulBomb> {
+    private static ResourceLocation TEXTURE = NetherExp.netherexpPath("textures/block/soul_magma.png");
     public static ResourceLocation SWIRL_TEXTURES[] = {
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_0.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_1.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_2.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_3.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_4.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_5.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_6.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_7.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_8.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_9.png"),
-            RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_swirl_10.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_0.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_1.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_2.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_3.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_4.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_5.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_6.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_7.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_8.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_9.png"),
+            IronsSpellbooks.id("textures/entity/fireball/soul_swirl_10.png")
     };
 
     private final ModelPart orb;
@@ -81,10 +77,10 @@ public class SoulBombRenderer  extends EntityRenderer<SoulBomb> {
         super.render(entity, yaw, partialTicks, poseStack, bufferSource, light);
     }
 
+
     @Override
     public ResourceLocation getTextureLocation(SoulBomb entity) {
-        int frame = (entity.tickCount) % TEXTURE.length;
-        return TEXTURE[frame];
+        return TEXTURE;
     }
 
     private ResourceLocation getSwirlTextureLocation(SoulBomb entity) {
