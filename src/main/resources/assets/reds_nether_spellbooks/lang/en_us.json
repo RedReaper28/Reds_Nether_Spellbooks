@@ -4,7 +4,9 @@
   "item.reds_nether_spellbooks.quartz_purity_charm": "Quartz Purity Charm",
   "item.reds_nether_spellbooks.treacherous_talisman": "Treacherous Talisman",
   "item.reds_nether_spellbooks.treacherous_talisman.desc": "Makes your Fire Spell Damage inflict Treacherous Fire and doubles it when the is under 50% health",
-  "item.reds_nether_spellbooks.soul_burn_talisman": "Soulburn Talisman",
+  "item.reds_nether_spellbooks.withered_conjurers_talisman": "Withered Conjurers Talisman",
+  "item.reds_nether_spellbooks.withered_conjurers_talisman.desc": "Makes your Summons inflict up to 4 stacks of Wither onto their targets",
+  "item.reds_nether_spellbooks.soul_burn_talisman": "Soul Burner Talisman",
   "item.reds_nether_spellbooks.soul_burn_talisman.desc": "Makes your Fire Spell Damage inflict Soul Fire and add stacks of Soul Burn",
   "item.reds_nether_spellbooks.firebolt_shotgun_shell": "Dragon Breath Shotgun Shell",
 
@@ -37,9 +39,8 @@
 
   "spell.reds_nether_spellbooks.black_icicle": "Black Icicle",
   "spell.reds_nether_spellbooks.black_icicle.guide": "Fire a piercing bolt of withering cold energy in the form of an icicle, inflicting a Cryonecrosis to those it pierces",
-
   "spell.reds_nether_spellbooks.ebony_shatter": "Ebony Shatter",
-  "spell.reds_nether_spellbooks.ebony_shatter.guide": "",
+  "spell.reds_nether_spellbooks.ebony_shatter.guide": "Punch a creature to freeze its defenses and shatter them, rendering them. Rendered creatures have reduced armor. Creatures frozen enough have their resistance to Ice Spell Damage reduced",
 
   "creative_tab.reds_nether_spellbooks.reds_nether_spellbooks": "Red's Nether Spells 'n Spellbooks"
 }

@@ -11,7 +11,9 @@ import com.redreaper.red_nether_spellbooks.entity.spells.ecto_bomb.SoulField;
 import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet.FireboltPellet;
 import com.redreaper.red_nether_spellbooks.entity.spells.phantasm_bolt.PhasmoBoltEntity;
 import com.redreaper.red_nether_spellbooks.entity.spells.pyroclast_daggers.PyroclastDaggerProjectile;
+import com.redreaper.red_nether_spellbooks.entity.spells.soul_firebolt.SoulFireboltProjectile;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
+import io.redspace.ironsspellbooks.entity.spells.firebolt.FireboltProjectile;
 import io.redspace.ironsspellbooks.entity.spells.magic_arrow.MagicArrowProjectile;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -31,6 +33,12 @@ public class ModEntities {
                     .sized(0.7F, 0.6F).eyeHeight(0.3F)
                     .clientTrackingRange(8)
                     .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "firebolt_pellet").toString()));
+
+    public static final DeferredHolder<EntityType<?>, EntityType<SoulFireboltProjectile>> SOUL_FIREBOLT_PROJECTILE =
+            ENTITIES.register("soul_firebolt", () -> EntityType.Builder.<SoulFireboltProjectile>of(SoulFireboltProjectile::new, MobCategory.MISC)
+                    .sized(.5f, .5f)
+                    .clientTrackingRange(64)
+                    .build(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "soul_firebolt").toString()));
 
     public static final DeferredHolder<EntityType<?>, EntityType<SoulBomb>> ECTO_BOMB =
             ENTITIES.register("ecto_bomb", () -> EntityType.Builder.<SoulBomb>of(SoulBomb::new, MobCategory.MISC)

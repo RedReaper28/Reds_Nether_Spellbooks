@@ -3,16 +3,18 @@ package com.redreaper.red_nether_spellbooks.events;
 import com.redreaper.red_nether_spellbooks.init.ModItems;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.SoulBurnNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.TreacherusNecklace;
+import com.redreaper.red_nether_spellbooks.item.curios.necklace.WitheredConjurerNecklace;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
+import io.redspace.ironsspellbooks.entity.mobs.IMagicSummon;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.acetheeldritchking.aces_spell_utils.utils.ASUtils;
 import net.jadenxgamer.netherexp.registry.JNEAttachmentTypes;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 @EventBusSubscriber
@@ -26,10 +28,17 @@ public class ServerEvents {
 
         // Curios
         if (sourceEntity != null) {
+            if (sourceEntity instanceof IMagicSummon summon && summon.getSummoner() instanceof Player summoner) {
+                if (ASUtils.hasCurio(summoner, ModItems.WITHERED_CONJURERS_TALISMAN.get()) && (!summoner.getCooldowns().isOnCooldown(ModItems.WITHERED_CONJURERS_TALISMAN.get()))) {
+                    Utils.addEffectStack(target, MobEffects.WITHER, 4, 5 * 20);
+                    summoner.getCooldowns().addCooldown(ModItems.WITHERED_CONJURERS_TALISMAN.get(), WitheredConjurerNecklace.COOLDOWN);
+                }
+            }
+
             if (sourceEntity instanceof Player player) {
 
                 // Treacherous Necklace - Entities with lower 50% of their health receive double(? damage
-                if (ASUtils.hasCurio(player, ModItems.TREACHEROUS_NECKLACE.get())) {
+                if (ASUtils.hasCurio(player, ModItems.TREACHEROUS_NECKLACE.get()) && (!player.getCooldowns().isOnCooldown(ModItems.TREACHEROUS_NECKLACE.get()))) {
                     final float MAX_HEALTH = target.getMaxHealth();
                     float baseHealth = target.getHealth();
                     double percent = (baseHealth / MAX_HEALTH) * 100;
@@ -42,7 +51,7 @@ public class ServerEvents {
                     }
                 }
 
-                if (ASUtils.hasCurio(player, ModItems.SOUL_BURN_NECKLACE.get())) {
+                if (ASUtils.hasCurio(player, ModItems.SOUL_BURN_NECKLACE.get()) && (!player.getCooldowns().isOnCooldown(ModItems.SOUL_BURN_NECKLACE.get()))) {
                     if (event.getSource().is(ISSDamageTypes.FIRE_MAGIC)) {
                         target.setData(JNEAttachmentTypes.LAST_FIRE.get(), ResourceLocation.parse("minecraft:soul_fire"));
                         Utils.addEffectStack(target, MobEffectRegistry.SOUL_BURN, 10, 30 * 20);

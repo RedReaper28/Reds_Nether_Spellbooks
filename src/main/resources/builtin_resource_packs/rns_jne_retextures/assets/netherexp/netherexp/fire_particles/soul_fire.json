@@ -1,0 +1,15 @@
+{
+  "blocks": "minecraft:soul_fire",
+  "smoke_start_colors": [
+    "#614ab7"
+  ],
+  "smoke_end_colors": [
+    "#8aeafb",
+    "#43337d",
+    "#503c98",
+    "#614ab7"
+  ],
+  "ember_colors": [
+    "#52b1f2"
+  ]
+}

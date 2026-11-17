@@ -5,6 +5,7 @@ import com.redreaper.red_nether_spellbooks.entity.spells.firebolt_shotgun_pellet
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.QuartzNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.SoulBurnNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.TreacherusNecklace;
+import com.redreaper.red_nether_spellbooks.item.curios.necklace.WitheredConjurerNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.ring.SpellPowerRing;
 import com.redreaper.red_nether_spellbooks.item.curios.spellbooks.BansheeSpellBookIte;
 import net.jadenxgamer.netherexp.core.item.ShotgunShellItem;
@@ -35,6 +36,9 @@ public class ModItems {
             SoulBurnNecklace::new);
     public static final DeferredHolder<Item, Item> TREACHEROUS_NECKLACE = ITEMS.register("treacherous_talisman",
             TreacherusNecklace::new);
+
+    public static final DeferredHolder<Item, Item> WITHERED_CONJURERS_TALISMAN = ITEMS.register("withered_conjurers_talisman",
+            WitheredConjurerNecklace::new);
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);

@@ -24,6 +24,7 @@ public class ModCreativeTabs {
                         output.accept(ModItems.QUARTZ_PURITY_CHARM.get());
                         output.accept(ModItems.SOUL_BURN_NECKLACE.get());
                         output.accept(ModItems.TREACHEROUS_NECKLACE.get());
+                        output.accept(ModItems.WITHERED_CONJURERS_TALISMAN.get());
 
                         output.accept(ModBlocks.BRAZIER_TREACHEROUS.get());
 

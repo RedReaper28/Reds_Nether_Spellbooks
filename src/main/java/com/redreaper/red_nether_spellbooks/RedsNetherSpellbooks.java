@@ -66,6 +66,7 @@ public class RedsNetherSpellbooks {
         ModMobEffects.register(modEventBus);
         ModLootModifiers.register(modEventBus);
         ModSpells.register(modEventBus);
+        ModParticleTypes.register(modEventBus);
 
         modEventBus.addListener(this::addPackFinders);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "V": {
+      "item": "irons_spellbooks:bloody_vellum"
+    },
+    "A": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "T": {
+      "item": "irons_spellbooks:conjurers_talisman"
+    }
+  },
+  "pattern": [
+    " V ",
+    "VTV",
+    "AV "
+  ],
+  "result": {
+    "count": 1,
+    "id": "reds_nether_spellbooks:withered_conjurers_talisman"
+  }
+}
