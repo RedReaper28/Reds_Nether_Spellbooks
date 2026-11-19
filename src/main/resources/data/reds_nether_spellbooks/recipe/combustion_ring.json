@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:fire_charge"
+    },
+    "X": {
+      "item": "irons_spellbooks:mithril_scrap"
+    }
+  },
+  "pattern": [
+    "M ",
+    " X"
+  ],
+  "result": {
+    "count": 1,
+    "id": "reds_nether_spellbooks:combustion_ring"
+  }
+}

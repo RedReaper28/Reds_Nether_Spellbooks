@@ -1,15 +1,15 @@
 package com.redreaper.red_nether_spellbooks.entity.spells.soul_firebolt;
 
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
+import com.redreaper.red_nether_spellbooks.init.ModSpells;
 import com.redreaper.red_nether_spellbooks.particle.ModParticleHelper;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
 import io.redspace.ironsspellbooks.damage.DamageSources;
 import io.redspace.ironsspellbooks.entity.spells.AbstractMagicProjectile;
 import net.jadenxgamer.netherexp.registry.JNEAttachmentTypes;
+import net.jadenxgamer.netherexp.registry.JNEParticleTypes;
 import net.minecraft.core.Holder;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -63,14 +63,14 @@ public class SoulFireboltProjectile extends AbstractMagicProjectile {
     protected void onHitEntity(@NotNull EntityHitResult entityHitResult) {
         super.onHitEntity(entityHitResult);
         var target = entityHitResult.getEntity();
-        DamageSources.applyDamage(target, getDamage(), SpellRegistry.FIREBOLT_SPELL.get().getDamageSource(this, getOwner()));
+        DamageSources.applyDamage(target, getDamage(), ModSpells.SOUL_FIREBOLT.get().getDamageSource(this, getOwner()));
         target.setData(JNEAttachmentTypes.LAST_FIRE.get(), ResourceLocation.parse("minecraft:soul_fire"));
         consumeEntityImpact(entityHitResult, true);
     }
 
     @Override
     public void impactParticles(double x, double y, double z) {
-        MagicManager.spawnParticles(level(), ParticleTypes.LAVA, x, y, z, 5, .1, .1, .1, .25, true);
+        MagicManager.spawnParticles(level(), JNEParticleTypes.SMALL_SOUL_FIRE_FLAME.get(), x, y, z, 5, .1, .1, .1, .25, true);
     }
 
     @Override

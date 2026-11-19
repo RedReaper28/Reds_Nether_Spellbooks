@@ -45,7 +45,7 @@ public class ExtendedWillOWisp extends WillOWisp {
         super.onHitEntity(entityHitResult);
         var target = entityHitResult.getEntity();
         if (target instanceof LivingEntity living) {
-            DamageSources.applyDamage(target, getDamage(), ModSpells.BANSHEE_SHOT.get().getDamageSource(this, getOwner()));
+            DamageSources.applyDamage(target, getDamage(), ModSpells.SOUL_FIREBOLT.get().getDamageSource(this, getOwner()));
         }
     }
 

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "reds_nether_spellbooks:spell_power_ring"
+    "reds_nether_spellbooks:spell_power_ring",
+    "reds_nether_spellbooks:combustion_ring"
   ]
 }

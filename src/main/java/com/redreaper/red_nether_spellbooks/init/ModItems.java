@@ -6,6 +6,7 @@ import com.redreaper.red_nether_spellbooks.item.curios.necklace.QuartzNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.SoulBurnNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.TreacherusNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.WitheredConjurerNecklace;
+import com.redreaper.red_nether_spellbooks.item.curios.ring.CombustionRing;
 import com.redreaper.red_nether_spellbooks.item.curios.ring.SpellPowerRing;
 import com.redreaper.red_nether_spellbooks.item.curios.spellbooks.BansheeSpellBookIte;
 import net.jadenxgamer.netherexp.core.item.ShotgunShellItem;
@@ -28,6 +29,8 @@ public class ModItems {
 
     public static final DeferredHolder<Item, Item> SPELL_POWER_RING = ITEMS.register("spell_power_ring",
             SpellPowerRing::new);
+    public static final DeferredHolder<Item, Item> COMBUSTION_RING = ITEMS.register("combustion_ring",
+            CombustionRing::new);
 
     public static final DeferredHolder<Item, Item> QUARTZ_PURITY_CHARM = ITEMS.register("quartz_purity_charm",
             QuartzNecklace::new);

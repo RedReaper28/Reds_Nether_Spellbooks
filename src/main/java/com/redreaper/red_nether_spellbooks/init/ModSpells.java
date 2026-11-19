@@ -22,9 +22,9 @@ public class ModSpells {
         return SPELLS.register(spell.getSpellName(), () -> spell);
     }
 
-    public static final Supplier<AbstractSpell> BANSHEE_SHOT = registerSpell(new BansheeShotSpell());
     public static final Supplier<AbstractSpell> ECTO_BOMB = registerSpell(new EctoBombSpell());
     public static final Supplier<AbstractSpell> PHASMO_BOLT = registerSpell(new PhasmoBoltSpell());
+    public static final Supplier<AbstractSpell> SOUL_FIREBOLT = registerSpell(new SoulFireboltSpell());
     public static final Supplier<AbstractSpell> SOULFIRE_RAY = registerSpell(new SoulFireRaySpell());
     public static final Supplier<AbstractSpell> SUMMON_BANSHEE = registerSpell(new SummonBansheeSpell());
     public static final Supplier<AbstractSpell> SUMMON_VESSEL = registerSpell(new SummonVesselSpell());

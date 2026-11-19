@@ -10,6 +10,7 @@ import com.redreaper.red_nether_spellbooks.entity.spells.soul_firebolt.SoulFireb
 import com.redreaper.red_nether_spellbooks.init.ModEntities;
 import com.redreaper.red_nether_spellbooks.init.ModParticleTypes;
 import com.redreaper.red_nether_spellbooks.particle.SoulEmberParticle;
+import io.redspace.ironsspellbooks.entity.spells.firebolt.FireboltRenderer;
 import net.jadenxgamer.netherexp.client.rendering.entity.*;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.NoopRenderer;
@@ -24,6 +25,7 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void onRegisterLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(SoulFireboltRenderer.MODEL_LAYER_LOCATION, SoulFireboltRenderer::createBodyLayer);
 
 
     }

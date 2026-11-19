@@ -25,7 +25,7 @@ import net.minecraft.world.phys.Vec3;
 public class SoulFireboltRenderer  extends EntityRenderer<Projectile> {
 
     public static final ModelLayerLocation MODEL_LAYER_LOCATION = new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(RedsNetherSpellbooks.MOD_ID, "soul_firebolt_model"), "main");
-    private static ResourceLocation TEXTURE = RedsNetherSpellbooks.id("textures/entity/soul_fireball/soul_firebolt.png");
+    private static ResourceLocation TEXTURE = RedsNetherSpellbooks.id("textures/entity/spell/soul_fireball/soul_firebolt.png");
 
 
     private final ModelPart body;

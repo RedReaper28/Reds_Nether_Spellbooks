@@ -1,6 +1,8 @@
 {
   "item.reds_nether_spellbooks.banshee_spell_book": "Banshee Summon Instructions",
   "item.reds_nether_spellbooks.spell_power_ring": "Ring of Power",
+  "item.reds_nether_spellbooks.combustion_ring": "Ring of Combustion",
+  "item.reds_nether_spellbooks.combustion_ring.desc": "When attacked, emit a damaging wave of fire",
   "item.reds_nether_spellbooks.quartz_purity_charm": "Quartz Purity Charm",
   "item.reds_nether_spellbooks.treacherous_talisman": "Treacherous Talisman",
   "item.reds_nether_spellbooks.treacherous_talisman.desc": "Makes your Fire Spell Damage inflict Treacherous Fire and doubles it when the is under 50% health",
@@ -35,7 +37,7 @@
   "spell.reds_nether_spellbooks.summon_vessel": "Summon Vessel Duo",
   "spell.reds_nether_spellbooks.summon_vessel.guide": "Cast to conjure Vessels that will follow,protect and fight for you",
   "spell.reds_nether_spellbooks.wraithing_wounds": "Wraithing Wounds",
-  "spell.reds_nether_spellbooks.wraithing_wounds.guide": "Imbue yourself with necrotic energy, healing your wounds when receiving damage at the cost of decreasing your movement speed, attack speed, mining speed, and cast time reduction by 0.025% each time up to 50$",
+  "spell.reds_nether_spellbooks.wraithing_wounds.guide": "Imbue yourself with necrotic energy, healing your wounds when receiving damage at the cost of decreasing your movement speed, attack speed, mining speed, and cast time reduction by 0.025% each time up to 50%",
 
   "spell.reds_nether_spellbooks.black_icicle": "Black Icicle",
   "spell.reds_nether_spellbooks.black_icicle.guide": "Fire a piercing bolt of withering cold energy in the form of an icicle, inflicting a Cryonecrosis to those it pierces",
