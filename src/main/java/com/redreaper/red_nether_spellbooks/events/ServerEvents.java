@@ -67,15 +67,12 @@ public class ServerEvents {
         }
     }
 
-
-
     @SubscribeEvent
     public static void onStandOnFluid(StandOnFluidEvent event) {
-        if (!(event.getEntity() instanceof Player)) return;
-
-        // Only the specified fluid (source or flowing)
-        if (event.getFluidState().getType().isSame(Fluids.WATER)) {
-            event.setCanceled(true); // allow standing
+        if (!event.getEntity().getItemBySlot(EquipmentSlot.FEET).isEmpty() && event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() == ItemRegistry.PYROMANCER_BOOTS.get()) {
+            if (!event.getEntity().isShiftKeyDown() && (event.getFluidState().is(Fluids.LAVA) || event.getFluidState().is(Fluids.FLOWING_LAVA))) {
+                event.setCanceled(true);
+            }
         }
     }
 
