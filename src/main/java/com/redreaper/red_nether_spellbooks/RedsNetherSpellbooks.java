@@ -56,7 +56,6 @@ public class RedsNetherSpellbooks {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public RedsNetherSpellbooks(IEventBus modEventBus, ModContainer modContainer) {
-        modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
 
         ModCreativeTabs.register(modEventBus);
@@ -68,6 +67,7 @@ public class RedsNetherSpellbooks {
         ModSpells.register(modEventBus);
         ModParticleTypes.register(modEventBus);
 
+        modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::addPackFinders);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

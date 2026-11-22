@@ -7,7 +7,7 @@
   "item.reds_nether_spellbooks.treacherous_talisman": "Treacherous Talisman",
   "item.reds_nether_spellbooks.treacherous_talisman.desc": "Makes your Fire Spell Damage inflict Treacherous Fire and doubles it when the is under 50% health",
   "item.reds_nether_spellbooks.withered_conjurers_talisman": "Withered Conjurers Talisman",
-  "item.reds_nether_spellbooks.withered_conjurers_talisman.desc": "Makes your Summons inflict up to 4 stacks of Wither onto their targets",
+  "item.reds_nether_spellbooks.withered_conjurers_talisman.desc": "Makes your Ranged Summons inflict up to 4 stacks of Wither onto their targets",
   "item.reds_nether_spellbooks.soul_burn_talisman": "Soul Burner Talisman",
   "item.reds_nether_spellbooks.soul_burn_talisman.desc": "Makes your Fire Spell Damage inflict Soul Fire and add stacks of Soul Burn",
   "item.reds_nether_spellbooks.firebolt_shotgun_shell": "Dragon Breath Shotgun Shell",
@@ -30,6 +30,8 @@
   "spell.reds_nether_spellbooks.ecto_bomb.guide": "Launch a bomb made from souls, exploding on impact and leaving a field of soul fire where it lands",
   "spell.reds_nether_spellbooks.phasmo_bolt": "Phasmo Bolt",
   "spell.reds_nether_spellbooks.phasmo_bolt.guide": "Shot a powerful ecto shard forward that pierces both block and enemies and damages creatures that it phases thorough",
+  "spell.reds_nether_spellbooks.soul_firebolt": "Soul Firebolt",
+  "spell.reds_nether_spellbooks.soul_firebolt.guide": "Shoot a small projectile of soul fire, igniting whatever it hits",
   "spell.reds_nether_spellbooks.soulfire_ray": "Soulfire Ray",
   "spell.reds_nether_spellbooks.soulfire_ray.guide": "Fires a beam of soul fire, dealing low damage but reducing healing to the creature it hit",
   "spell.reds_nether_spellbooks.summon_banshee": "Summon Banshee Haunting",
@@ -43,6 +45,9 @@
   "spell.reds_nether_spellbooks.black_icicle.guide": "Fire a piercing bolt of withering cold energy in the form of an icicle, inflicting a Cryonecrosis to those it pierces",
   "spell.reds_nether_spellbooks.ebony_shatter": "Ebony Shatter",
   "spell.reds_nether_spellbooks.ebony_shatter.guide": "Punch a creature to freeze its defenses and shatter them, rendering them. Rendered creatures have reduced armor. Creatures frozen enough have their resistance to Ice Spell Damage reduced",
+
+  "ui.reds_nether_spellbooks.burn_time": "%s Burn Time",
+
 
   "creative_tab.reds_nether_spellbooks.reds_nether_spellbooks": "Red's Nether Spells 'n Spellbooks"
 }

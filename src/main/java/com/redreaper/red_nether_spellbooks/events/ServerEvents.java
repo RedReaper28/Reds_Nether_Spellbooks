@@ -1,5 +1,6 @@
 package com.redreaper.red_nether_spellbooks.events;
 
+import com.redreaper.red_nether_spellbooks.events.custom.StandOnFluidEvent;
 import com.redreaper.red_nether_spellbooks.init.ModItems;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.SoulBurnNecklace;
 import com.redreaper.red_nether_spellbooks.item.curios.necklace.TreacherusNecklace;
@@ -7,12 +8,15 @@ import com.redreaper.red_nether_spellbooks.item.curios.necklace.WitheredConjurer
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.damage.ISSDamageTypes;
 import io.redspace.ironsspellbooks.entity.mobs.IMagicSummon;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import net.acetheeldritchking.aces_spell_utils.utils.ASUtils;
 import net.jadenxgamer.netherexp.registry.JNEAttachmentTypes;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.material.Fluids;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
@@ -60,6 +64,18 @@ public class ServerEvents {
                 }
 
             }
+        }
+    }
+
+
+
+    @SubscribeEvent
+    public static void onStandOnFluid(StandOnFluidEvent event) {
+        if (!(event.getEntity() instanceof Player)) return;
+
+        // Only the specified fluid (source or flowing)
+        if (event.getFluidState().getType().isSame(Fluids.WATER)) {
+            event.setCanceled(true); // allow standing
         }
     }
 

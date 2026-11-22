@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.redreaper.red_nether_spellbooks.mixin",
+  "refmap": "red_nether_spellbooks.refmap.json",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "plugin": "com.redreaper.red_nether_spellbooks.mixin.MixinPlugin",
+  "mixins": [
+    "entity.EntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
